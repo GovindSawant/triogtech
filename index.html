@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TriOG Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <!-- SVG LOGO -->
+            <svg width="140" height="140" viewBox="0 0 140 140">
+                <image href="assets/logo.png" width="140" height="140" />
+            </svg>
+        </div>
+        <nav class="nav">
+            <div class="close-btn" onclick="toggleMenu()">×</div>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <img src="assets/menu-line.png" alt="Menu" />
+        </div>
+    </header>
+
+    <!-- Home -->
+    <section id="home" class="section home">
+        <h1>Building Digital Solutions for the Future</h1>
+        <p>
+            TriOG Tech provides professional website development, software solutions,
+            and IT services tailored to your business needs.
+        </p>
+        <button onclick="scrollToSection('services')">Our Services</button>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>
+            TriOG Tech is a technology-focused service company delivering modern,
+            scalable, and secure digital solutions. We specialize in helping startups
+            and businesses establish a strong online presence.
+        </p>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section services">
+        <h2>Our Services</h2>
+
+        <div class="service-card">
+            <h3>Website Development</h3>
+            <p>Responsive, fast, and SEO-friendly websites using modern technologies.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Web Applications</h3>
+            <p>Custom web applications tailored to business workflows.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>IT Consulting</h3>
+            <p>Technology guidance, system design, and digital transformation.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Maintenance & Support</h3>
+            <p>Ongoing support, updates, and performance optimization.</p>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="section team">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="#" alt="Team Member 1" />
+                </div>
+                <div class="team-links">
+                    <a href="#" class="linkedin"><img src="assets/linkedin-fill.png" alt="LinkedIn" /></a>
+                    <a href="#" class="github"><img src="assets/github-fill.png" alt="GitHub" /></a>
+                </div>
+                <div class="team-info">
+                    <h3>Ganesh Thakur</h3>
+                    <p>Developer</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://via.placeholder.com/300x300?text=Member+2" alt="Team Member 2" />
+                </div>
+                <div class="team-links">
+                    <a href="#" class="linkedin"><img src="assets/linkedin-fill.png" alt="LinkedIn" /></a>
+                    <a href="#" class="github"><img src="assets/github-fill.png" alt="GitHub" /></a>
+                </div>
+                <div class="team-info">
+                    <h3>Govind Sawant</h3>
+                    <p>Developer</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://via.placeholder.com/300x300?text=Member+3" alt="Team Member 3" />
+                </div>
+                <div class="team-links">
+                    <a href="" class="linkedin"><img src="assets/linkedin-fill.png" alt="LinkedIn" /></a>
+                    <a href="#" class="github"><img src="assets/github-fill.png" alt="GitHub" /></a>
+                </div>
+                <div class="team-info">
+                    <h3>Omkar Parab</h3>
+                    <p>Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <h2>Contact Us</h2>
+        <p>Email: triogtech@gmail.com</p>
+        <p>Phone: +91 7796749931</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 TriOG Tech. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
