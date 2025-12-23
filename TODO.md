@@ -1,2 +1,0 @@
-- [x] Add favicon link to index.html to set logo.png as the favicon
-- [ ] Adjust #omkar-img to show the top side of the image
