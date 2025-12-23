@@ -81,8 +81,8 @@ body {
 }
 
 .service-card {
-    
-    background: linear-gradient(135deg, #1a1a1a, #222);
+
+    background: linear-gradient(135deg, #1a1a1a, #004080);
     margin: 20px auto;
     padding: 25px;
     max-width: 500px;
@@ -128,6 +128,7 @@ body {
 }
 
 .team-card {
+    background: linear-gradient(90deg, #00aaff, #0088cc);
     width: 300px;
     height: 400px;
     position: relative;
@@ -159,6 +160,7 @@ body {
 }
 
 .team-links {
+    background: linear-gradient(90deg, #00aaff, #0088cc);
     position: absolute;
     top: 60%;
     left: 0;
@@ -167,7 +169,6 @@ body {
     justify-content: center;
     gap: 20px;
     padding: 10px 0;
-    background: rgba(0, 0, 0, 0.8);
 }
 
 .team-links a {
@@ -181,15 +182,17 @@ body {
     color: #ffffff;
 }
 
-.team-links img {
+.team-links img {/
+    color: #ffffff;
     width: 30px;
     height: 30px;
-    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+    filter: brightness(0) invert(1);
     transition: filter 0.3s ease;
 }
 
 .team-links a:hover img {
-    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(1.2);
+    fill:white;
+    filter: brightness(0) invert(1) brightness(1.2);
 }
 
 .team-info {
