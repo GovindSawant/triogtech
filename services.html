@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TriOG Tech - Digital Solutions</title>
+    <title>Services - TriOG Tech</title>
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,9 +25,9 @@
         </div>
         <nav class="nav">
             <div class="close-btn" onclick="toggleMenu()">×</div>
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
+            <a href="services.html" class="active">Services</a>
             <a href="team.html">Team</a>
             <a href="contact.html">Contact</a>
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
@@ -37,14 +37,36 @@
         <div class="hamburger" onclick="toggleMenu()">☰</div>
     </header>
 
-    <!-- Home -->
-    <section id="home" class="section home">
-        <h1>Building Digital Solutions<br>for the Future</h1>
-        <p>
-            TriOG Tech provides professional website development, software solutions,
-            and IT services tailored to your business needs.
-        </p>
-        <a href="services.html" class="cta-button">Explore Our Services</a>
+    <!-- Services Section -->
+    <section class="section services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Website Development</h3>
+                <p>Responsive, fast, and SEO-friendly websites using modern technologies like HTML5, CSS3, and
+                    JavaScript.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Web Applications</h3>
+                <p>Custom web applications tailored to business workflows, ensuring efficiency and scalability.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>IT Consulting</h3>
+                <p>Technology guidance, system design, and digital transformation strategies to grow your business.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Maintenance & Support</h3>
+                <p>Ongoing support, regular updates, and performance optimization to keep your digital assets running
+                    smoothly.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->

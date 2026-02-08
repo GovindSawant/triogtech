@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TriOG Tech - Digital Solutions</title>
+    <title>Contact Us - TriOG Tech</title>
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,11 +25,11 @@
         </div>
         <nav class="nav">
             <div class="close-btn" onclick="toggleMenu()">×</div>
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="services.html">Services</a>
             <a href="team.html">Team</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active">Contact</a>
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
                 <span class="theme-icon">☀️</span>
             </button>
@@ -37,14 +37,23 @@
         <div class="hamburger" onclick="toggleMenu()">☰</div>
     </header>
 
-    <!-- Home -->
-    <section id="home" class="section home">
-        <h1>Building Digital Solutions<br>for the Future</h1>
-        <p>
-            TriOG Tech provides professional website development, software solutions,
-            and IT services tailored to your business needs.
-        </p>
-        <a href="services.html" class="cta-button">Explore Our Services</a>
+    <!-- Contact Section -->
+    <section class="section contact">
+        <h1>Contact Us</h1>
+        <div
+            style="max-width: 600px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px var(--shadow-color);">
+            <p style="font-size: 1.2rem; margin-bottom: 20px; color: var(--text-color);">
+                Get in touch with us effectively!
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 10px;">
+                <strong>Email:</strong> <a href="mailto:triogtech@gmail.com"
+                    style="color: var(--accent-color);">triogtech@gmail.com</a>
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-muted);">
+                <strong>Phone:</strong> <a href="tel:+917796749931" style="color: var(--accent-color);">+91
+                    7796749931</a>
+            </p>
+        </div>
     </section>
 
     <!-- Footer -->

@@ -1,428 +1,366 @@
+:root {
+    /* Dark Theme (Default) */
+    --bg-color: #0a0a0a;
+    --text-color: #ffffff;
+    --text-muted: #cccccc;
+    --card-bg: #1a1a1a;
+    --accent-color: #00aaff;
+    --accent-hover: #0088cc;
+    --gradient-primary: linear-gradient(135deg, #001f3f, #000);
+    --gradient-card: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    --nav-bg: rgba(0, 0, 0, 0.8);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+.light-mode {
+    /* Light Theme */
+    --bg-color: #f4f7f6;
+    --text-color: #111111;
+    --text-muted: #555555;
+    --card-bg: #ffffff;
+    --accent-color: #0077cc;
+    --accent-hover: #005fa3;
+    --gradient-primary: linear-gradient(135deg, #e0eafc, #89f7fe);
+    /* Soft blue/white */
+    --gradient-card: linear-gradient(135deg, #ffffff, #f0f0f0);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
-    background-color: #0a0a0a;
-    color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
 /* Header */
-.close-btn {
-    display:none
-}
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: #000;
+    padding: 1.5rem 5%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo svg {
+    /* Ensure logo is visible in both modes if it's black/white, might need filter */
+    height: 60px;
+    width: auto;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .nav a {
-    color: #00aaff;
+    color: var(--text-color);
     text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+    width: 100%;
 }
 
 .nav a:hover {
-    color: #ffffff;
+    color: var(--accent-color);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.theme-toggle:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Hamburger */
 .hamburger {
     display: none;
     cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-color);
 }
 
-.hamburger img {
-    width: 30px;
-    height: 30px;
-    filter: invert(1);
+.close-btn {
+    display: none;
 }
 
 /* Sections */
 .section {
-    padding: 80px 50px;
+    padding: 100px 5%;
     text-align: center;
 }
 
+/* Home / Hero */
 .home {
-    background: linear-gradient(135deg, #001f3f, #000);
+    min-height: 90vh;
+    /* Almost full viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    /* Fallback */
+    /* Add a subtle mesh gradient or blob later for "Premium" feel */
 }
 
+/* Premium Text Styling */
 .home h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, var(--accent-color), #88d4ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
 }
 
-.home button {
-    border-radius:5px;
-    padding: 12px 25px;
+.home p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+.cta-button {
+    padding: 15px 40px;
+    border-radius: 30px;
     border: none;
-    background: #00aaff;
-    color: #000;
-    font-size: 1rem;
+    background: var(--accent-color);
+    color: white;
+    /* Always white text on button */
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 20px;
+    box-shadow: 0 4px 15px var(--accent-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.home button:hover {
-    background: #ffffff;
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-color);
 }
 
 /* Services */
 .services {
-    background: linear-gradient(135deg, #111, #0a0a0a);
+    background-color: var(--bg-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
 }
 
 .service-card {
-
-    background: linear-gradient(135deg, #1a1a1a, #004080);
-    margin: 20px auto;
-    padding: 25px;
-    max-width: 500px;
-    border-left: 4px solid #00aaff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
 }
 
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #00aaff, #0088cc);
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-color);
+    border-color: var(--accent-color);
 }
 
 .service-card h3 {
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #00aaff;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 1.5rem;
 }
 
 .service-card p {
-    font-weight: 400;
-    color: #ccc;
+    color: var(--text-muted);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
 }
 
 /* Team */
 .team {
-    background: linear-gradient(135deg, #0a0a0a, #111);
+    background: var(--bg-color);
 }
 
 .team-container {
-    margin-top:40px;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .team-card {
-    background: linear-gradient(90deg, #00aaff, #0088cc);
     width: 300px;
-    height: 400px;
-    position: relative;
+    border-radius: 20px;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+    background: var(--card-bg);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
 }
 
 .team-image {
+    height: 320px;
     width: 100%;
-    height: 60%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
 .team-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 15px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    transition: transform 0.5s;
 }
 
-.team-links {
-    background: linear-gradient(90deg, #00aaff, #0088cc);
-    position: absolute;
-    top: 60%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px 0;
-}
-
-.team-links a {
-    color: #00aaff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.team-links a:hover {
-    color: #ffffff;
-}
-
-.team-links img {/
-    color: #ffffff;
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s ease;
-}
-
-.team-links a:hover img {
-    fill:white;
-    filter: brightness(0) invert(1) brightness(1.2);
+.team-card:hover .team-image img {
+    transform: scale(1.1);
 }
 
 .team-info {
-    color: #ffffff;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.9);
     padding: 20px;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
 }
 
 .team-info h3 {
-    font-weight: 600;
-    color: #ffffff;
+    color: var(--text-color);
     margin-bottom: 5px;
 }
 
 .team-info p {
-    font-weight: 400;
-    color: #ffffff;
+    color: var(--accent-color);
+    font-weight: 500;
 }
 
-@keyframes slideInUp {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+.team-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-/* Contact */
-.contact {
-    background: #000;
+.team-links a img {
+    width: 24px;
+    height: 24px;
+    filter: var(--icon-filter, brightness(0) invert(1));
+    /* Dynamic filter based on theme */
 }
+
+/* In light mode, social icons usually need to look standard (black) or colored.
+   But here we are using images. We need to handle this via CSS variables or filters. */
+.light-mode .team-links a img {
+    filter: invert(0);
+    /* Black icons for light mode */
+}
+
+/* Ensure dark mode icons are white */
+body:not(.light-mode) .team-links a img {
+    filter: invert(1);
+}
+
 
 /* Footer */
 .footer {
-    background: #000;
+    background: var(--card-bg);
+    color: var(--text-muted);
+    padding: 40px 5%;
     text-align: center;
-    padding: 15px;
-    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
 }
 
-/* Animations */
-
-/* General transitions */
-.header, .nav a, .home button, .service-card, .section {
-    transition: all 0.3s ease;
-}
-
-/* Hover effects */
-.nav a:hover {
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-.home button:hover {
-    background: #ffffff;
-    transform: scale(1.05);
-}
-
-.service-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 170, 255, 0.3);
-}
-
-/* Fade-in animation for sections */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.section {
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Responsive Design */
-
-/* Tablet and smaller screens (up to 1024px) */
-@media (max-width: 1024px) {
-    .header {
-        padding: 20px 30px;
-    }
-
-    .logo svg {
-        width: 100px;
-        height: 100px;
-    }
-
-    .section {
-        padding: 60px 30px;
-    }
-
-    .home h1 {
-        font-size: 2rem;
-    }
-
-    .service-card {
-        max-width: 80%;
-    }
-}
-
-/* Mobile screens (up to 768px) */
+/* Responsive */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 20px;
-    }
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 250px;
-        height: 100vh;
-        background: #000;
-        padding: 20px;
-        z-index: 10;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-    }
-
-    .nav.active {
-        display: flex;
-    }
-
-    .nav.active .close-btn {
-        display: block;
-    }
-
-    .nav a {
-        display: block;
-        margin: 10px 0;
-        margin-left: 0;
-    }
-
-.close-btn {
-    display: none;
-    align-self: flex-end;
-    font-size: 2rem;
-    color: #00aaff;
-    cursor: pointer;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    padding: 5px;
-}
-
     .hamburger {
         display: block;
     }
 
-    .logo svg {
-        width: 80px;
-        height: 80px;
-    }
-
-    .section {
-        padding: 40px 20px;
-    }
-
-    .home h1 {
-        font-size: 1.8rem;
-    }
-
-    .home button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .service-card {
-        max-width: 100%;
-        margin: 20px 0;
-    }
-
-    .team-container {
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--card-bg);
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
     }
 
-    .team-card {
-        width: 80%;
-        max-width: 300px;
-    }
-}
-
-/* Small mobile screens (up to 480px) */
-@media (max-width: 480px) {
-    .header {
-        padding: 15px 15px;
+    .nav.active {
+        right: 0;
     }
 
-    .logo svg {
-        width: 60px;
-        height: 60px;
-    }
-
-    .section {
-        padding: 30px 15px;
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--text-color);
     }
 
     .home h1 {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
-
-    .home button {
-        padding: 8px 15px;
-        font-size: 0.8rem;
-    }
-
-    .service-card {
-        padding: 20px;
-    }
-}
-#omkar-img{
-    object-position: top;
 }
